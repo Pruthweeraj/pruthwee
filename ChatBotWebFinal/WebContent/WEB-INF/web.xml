@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.infinite.login.chatbotweb.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/log</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>com.infinite.login.chatbotweb.RegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterServlet</servlet-name>
+		<url-pattern>/reg</url-pattern>
+	</servlet-mapping>
+
+<servlet>
+		<servlet-name>SubmitServlet</servlet-name>
+		<servlet-class>com.infinite.service.chatbotweb.SubmitServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SubmitServlet</servlet-name>
+		<url-pattern>/submit</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>SuccessServlet</servlet-name>
+		<servlet-class>com.infinite.service.chatbotweb.SuccessServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SuccessServlet</servlet-name>
+		<url-pattern>/success</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ProcessServlet</servlet-name>
+		<servlet-class>com.infinite.service.chatbotweb.ProcessServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProcessServlet</servlet-name>
+		<url-pattern>/ProcessServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LogicalReplayServlet</servlet-name>
+		<servlet-class>com.infinite.service.chatbotweb.LogicalReplayServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogicalReplayServlet</servlet-name>
+		<url-pattern>/LogicalReplayServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>DBServlet</servlet-name>
+		<servlet-class>com.infinite.service.chatbotweb.DBServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DBServlet</servlet-name>
+		<url-pattern>/DBServlet</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>Login.html</welcome-file>
+	</welcome-file-list>
+</web-app>
