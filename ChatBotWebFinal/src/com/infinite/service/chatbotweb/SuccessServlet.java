@@ -16,6 +16,9 @@ import com.chatbot.utility.UserBean;
 @SuppressWarnings("serial")
 public class SuccessServlet extends HttpServlet {
 
+	//adding a counter
+		static int counter = 0;
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse respence)
 			throws ServletException, IOException {
@@ -65,6 +68,8 @@ public class SuccessServlet extends HttpServlet {
 		// Adding userBean object to HttpSession object
 		session.setAttribute("userBean", userBean);
 		System.out.println("userBean object created and added to the session");
+		session.setAttribute("counter", counter);
+
 		
 		// Loading the Messanger.jsp
 		respence.sendRedirect("Messanger.jsp");

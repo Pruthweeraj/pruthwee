@@ -24,6 +24,7 @@ public class LogicalReplayServlet extends HttpServlet {
 
 	} // end of doGet
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -31,7 +32,7 @@ public class LogicalReplayServlet extends HttpServlet {
 
 		// creating session
 		HttpSession session = request.getSession();
-		String address = null;
+		//String address = null;
 
 		String botMessage = null;
 		String userMessage = (String) session.getAttribute("userMessage");

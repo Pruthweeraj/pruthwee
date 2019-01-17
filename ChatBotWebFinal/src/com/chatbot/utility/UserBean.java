@@ -49,7 +49,7 @@ public class UserBean {
 	public long getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public String getMailId() {
@@ -61,7 +61,9 @@ public class UserBean {
 	
 	@Override
 	public String toString() {
-		return "User Details <br/> User Name = "+userName +"<br/> First Name = "+firstName+" <br/> Last Name = "+lastName +"<br/> PhoneNumber = "+phoneNumber+"<br/> Mail Id = "+mailId;
+		return "User Details <br/> User Name = "+userName +"<br/> First Name = "+firstName+" <br/> Last Name = "+lastName +"<br/> PhoneNumber = "+phoneNumber+"<br/> Mail Id = "+mailId
+				+"<br/><a href=\"EditUserDetailsServlet\"> Edit your Profile...</a>";
+
 	}
 	
 	

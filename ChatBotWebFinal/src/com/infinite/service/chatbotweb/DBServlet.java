@@ -27,6 +27,7 @@ public class DBServlet extends HttpServlet {
 
 	} // end of doGet
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -34,7 +35,7 @@ public class DBServlet extends HttpServlet {
 
 		// creating session
 		HttpSession session = request.getSession();
-		String address = null;
+		// String address = null;
 		// Getting the userMessage from the session
 		String userMessage = (String) session.getAttribute("userMessage");
 		String userMessageUnchange = (String) session.getAttribute("userMessageUnchange");
@@ -42,8 +43,8 @@ public class DBServlet extends HttpServlet {
 		String botMessage = null;
 
 		Connection con;
-		int n = 1;
-		String u1, u2, u3, b1, b2, b3;
+		// int n = 1;
+		// String u1, u2, u3, b1, b2, b3;
 
 		con = DBConnection.connect();
 		String query = "Select * from msg";
@@ -69,9 +70,10 @@ public class DBServlet extends HttpServlet {
 						botMessage = rs.getString("b3");
 					}
 
-				} else {
-					botMessage = "Sorry! i can't process this request";
 				}
+			}
+			if (botMessage == null) {
+				botMessage = "Sorry! i can't process this request @db";
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -82,33 +84,29 @@ public class DBServlet extends HttpServlet {
 			}
 		}
 
-		
 		// adding the messages to map and redirecting to messanger.jsp
-				Map messages = (Map) session.getAttribute("messages");
+		Map messages = (Map) session.getAttribute("messages");
 
-				if (messages == null) {
-					Map map = new LinkedHashMap<>();
-					ArrayList arrayList = new ArrayList<>();
-					arrayList.add(userMessageUnchange);
-					arrayList.add(botMessage);
-					map.put(++counter, arrayList);
-					session.setAttribute("messages", map);
-					session.setAttribute("counter", counter);
-				}
+		if (messages == null) {
+			Map map = new LinkedHashMap<>();
+			ArrayList arrayList = new ArrayList<>();
+			arrayList.add(userMessageUnchange);
+			arrayList.add(botMessage);
+			map.put(++counter, arrayList);
+			session.setAttribute("messages", map);
+			session.setAttribute("counter", counter);
+		}
 
-				if (messages != null) {
-					ArrayList arrayList = new ArrayList<>();
-					arrayList.add(userMessageUnchange);
-					arrayList.add(botMessage);
-					System.out.println(userMessage + "   " + botMessage);
-					messages.put(++counter, arrayList);
-					session.setAttribute("counter", counter);
-				}
+		if (messages != null) {
+			ArrayList arrayList = new ArrayList<>();
+			arrayList.add(userMessageUnchange);
+			arrayList.add(botMessage);
+			System.out.println(userMessage + "   " + botMessage);
+			messages.put(++counter, arrayList);
+			session.setAttribute("counter", counter);
+		}
 
-				response.sendRedirect("Messanger.jsp");
-				
-		
-		
-		
+		response.sendRedirect("Messanger.jsp");
+
 	}// end of doPost
 }// end of service

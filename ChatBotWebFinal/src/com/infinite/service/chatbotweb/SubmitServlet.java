@@ -12,8 +12,7 @@ import javax.servlet.http.HttpSession;
 @SuppressWarnings("serial")
 public class SubmitServlet extends HttpServlet  {
 
-	//adding a counter
-	static int counter = 0;
+	
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse respence)
@@ -36,7 +35,6 @@ public class SubmitServlet extends HttpServlet  {
 		// Adding userUnchangeMessage and userMessage to session
 		session.setAttribute("userMessageUnchange", userMessageUnchange);
 		session.setAttribute("userMessage", userMessage);
-		session.setAttribute("counter", counter);
 		//forwarding to ProcessServlet
 		address = "ProcessServlet";
 		RequestDispatcher rd =request.getRequestDispatcher(address);	

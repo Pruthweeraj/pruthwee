@@ -22,11 +22,11 @@
 
 
 			<%
-					response.setContentType("text/html");
+				response.setContentType("text/html");
 
-					//retriving userName from session
-					UserBean userBean = (UserBean) session.getAttribute("userBean");
-				%>
+				//retriving userName from session
+				UserBean userBean = (UserBean) session.getAttribute("userBean");
+			%>
 
 			<div class="chat infinite">
 
@@ -42,9 +42,9 @@
 
 			<!-- checking Internet connection availability-->
 			<%
-					boolean internet = (boolean) session.getAttribute("internet");
-					if (!internet) {
-				%>
+				boolean internet = (boolean) session.getAttribute("internet");
+				if (!internet) {
+			%>
 			<div class="chat infinite">
 
 				<div class="user-photo">
@@ -78,17 +78,17 @@
 
 
 			<%
-					}
+				}
 
-					//Accessing the (Map)messages from session
-					Map map = (Map) session.getAttribute("messages");
+				//Accessing the (Map)messages from session
+				Map map = (Map) session.getAttribute("messages");
 
-					if (map != null) {
-						Iterator<Map.Entry<Number, Object>> itr = map.entrySet().iterator();
-						while (itr.hasNext()) {
-							Map.Entry<Number, Object> entry = itr.next();
-							ArrayList arrayList = (ArrayList) (entry.getValue());
-				%>
+				if (map != null) {
+					Iterator<Map.Entry<Number, Object>> itr = map.entrySet().iterator();
+					while (itr.hasNext()) {
+						Map.Entry<Number, Object> entry = itr.next();
+						ArrayList arrayList = (ArrayList) (entry.getValue());
+			%>
 
 			<div class="chat user">
 
@@ -103,14 +103,14 @@
 				<div class="user-photo">
 					<img src="infinite.png">
 				</div>
-				<p class="chat-message"><%=arrayList.get(1)%>
-				<p>
+				<p class="chat-message"><%=arrayList.get(1)%></p>
+
 			</div>
 
 			<%
-					}
-					}
-				%>
+				}
+				}
+			%>
 
 
 

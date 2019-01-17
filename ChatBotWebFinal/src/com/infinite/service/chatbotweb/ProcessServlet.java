@@ -35,8 +35,13 @@ public class ProcessServlet extends HttpServlet  {
 		System.out.println("userMessage:"+userMessage);
 		boolean logicalStringCheck = LogicalStringCheck.check(userMessage);
 		
+		String uEditMessage = (String) session.getAttribute("uEditMessage");
+		if (uEditMessage != null) {
+			System.out.println("entering into EditUserServlet");
+			response.sendRedirect("EditUserDetailsServlet");
+			
 		//if logicalStringCheck if true then forward to LogicalReplayServlet
-		if(logicalStringCheck == true) {
+		}else if(logicalStringCheck == true) {
 			address = "LogicalReplayServlet";
 			RequestDispatcher rd =request.getRequestDispatcher(address);	
 			rd.forward(request,response);
@@ -44,6 +49,10 @@ public class ProcessServlet extends HttpServlet  {
 			address = "DBServlet";
 			RequestDispatcher rd =request.getRequestDispatcher(address);	
 			rd.forward(request,response);	
+		}else {
+			address = "DefaultServlet";
+			RequestDispatcher rd =request.getRequestDispatcher(address);	
+			rd.forward(request,response);
 		}
 		
 		
