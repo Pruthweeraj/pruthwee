@@ -1,4 +1,4 @@
-package com.infinite.multithreading.Methodsyschronization;
+package com.infinite.Methodsyschronization;
 
 public class SyschronizeDemo {
 

@@ -1,4 +1,4 @@
-package com.infinite.multithreading.syschronizedblock;
+package com.infinite.syschronizedblock;
 
 public class SysncBlockDemo {
 

@@ -1,5 +1,4 @@
-package com.infinite.multithreading.syschronizedblock;
-
+package com.infinite.Methodsyschronization;
 
 public class MyThread extends Thread {
 

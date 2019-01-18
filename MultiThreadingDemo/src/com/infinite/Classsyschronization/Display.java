@@ -1,4 +1,4 @@
-package com.infinite.multithreading.Classsyschronization;
+package com.infinite.Classsyschronization;
 
 public class Display {
 
