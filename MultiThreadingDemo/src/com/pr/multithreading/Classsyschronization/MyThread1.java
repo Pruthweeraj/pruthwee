@@ -8,6 +8,7 @@ public class MyThread1 extends Thread {
 		this.d = d;
 	}
 
+	@SuppressWarnings("static-access")
 	@Override
 	public void run() {
 		d.displayn();
