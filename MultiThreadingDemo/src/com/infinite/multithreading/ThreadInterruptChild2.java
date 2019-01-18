@@ -1,4 +1,4 @@
-package com.pr.multithreading;
+package com.infinite.multithreading;
 
 public class ThreadInterruptChild2 extends Thread {
 	@Override

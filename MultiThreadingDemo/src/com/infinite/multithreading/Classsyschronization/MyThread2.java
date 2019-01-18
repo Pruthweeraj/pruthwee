@@ -1,4 +1,4 @@
-package com.pr.multithreading.Classsyschronization;
+package com.infinite.multithreading.Classsyschronization;
 
 public class MyThread2 extends Thread {
 

@@ -1,4 +1,4 @@
-package com.pr.multithreading.Methodsyschronization;
+package com.infinite.multithreading.Methodsyschronization;
 
 public class Display {
 
